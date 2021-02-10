@@ -3,6 +3,7 @@ package crud.servlet;
 import crud.controller.PostController;
 import crud.repository.PostRepository;
 import crud.service.PostService;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,9 +19,10 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        final var repository = new PostRepository();
-        final var service = new PostService(repository);
-        controller = new PostController(service);
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                "applicationContext.xml");
+        controller = context.getBean ("postController",PostController.class);
+        context.close();
     }
 
     @Override
