@@ -1,9 +1,9 @@
 package crud.servlet;
 
+import crud.config.SpringConfig;
 import crud.controller.PostController;
-import crud.repository.PostRepository;
-import crud.service.PostService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,8 +19,7 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
+       AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         controller = context.getBean ("postController",PostController.class);
         context.close();
     }
