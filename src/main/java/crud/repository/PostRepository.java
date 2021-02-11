@@ -2,11 +2,14 @@ package crud.repository;
 
 import crud.exception.NotFoundException;
 import crud.model.Post;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Vector;
 
+
+@Component
 public class PostRepository {
     private final List<Post> allPosts;
     private long idCounter;

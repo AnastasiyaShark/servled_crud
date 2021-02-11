@@ -3,17 +3,20 @@ package crud.controller;
 import com.google.gson.Gson;
 import crud.model.Post;
 import crud.service.PostService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Reader;
 
+@Component
 public class PostController {
     public static final String APPLICATION_JSON = "application/json";
     private final PostService service;
     private final Gson gson;
 
-
+    @Autowired
     public PostController(PostService service) {
         this.service = service;
         gson = new Gson();
