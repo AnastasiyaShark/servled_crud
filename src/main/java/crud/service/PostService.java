@@ -3,11 +3,15 @@ package crud.service;
 import crud.exception.NotFoundException;
 import crud.model.Post;
 import crud.repository.PostRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
 public class PostService {
     private final PostRepository repository;
+
 
     public PostService(PostRepository repository) {
         this.repository = repository;
