@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.Vector;
 
 
-@Component
+
 public class PostRepository {
     private final List<Post> allPosts;
     private long idCounter;

@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+
 public class PostService {
     private final PostRepository repository;
 
-    @Autowired
+
     public PostService(PostRepository repository) {
         this.repository = repository;
     }
